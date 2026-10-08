@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户注册</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 背景装饰 -->
+    <div class="bg-decoration">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+    </div>
+
+    <!-- 注册卡片 -->
+    <div class="register-container">
+        <div class="register-card">
+            <!-- 头部 -->
+            <div class="card-header">
+                <div class="logo">🚀</div>
+                <h1>创建账号</h1>
+                <p>欢迎加入我们,请填写以下信息</p>
+            </div>
+
+            <!-- 注册表单 -->
+            <form id="registerForm" novalidate>
+                <!-- 用户名 -->
+                <div class="form-group">
+                    <label for="username">用户名</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">👤</span>
+                        <input type="text" id="username" name="username" placeholder="请输入用户名(3-20位)" maxlength="20">
+                    </div>
+                    <span class="error-message" id="usernameError"></span>
+                </div>
+
+                <!-- 邮箱 -->
+                <div class="form-group">
+                    <label for="email">邮箱</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">📧</span>
+                        <input type="email" id="email" name="email" placeholder="请输入邮箱地址">
+                    </div>
+                    <span class="error-message" id="emailError"></span>
+                </div>
+
+                <!-- 密码 -->
+                <div class="form-group">
+                    <label for="password">密码</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">🔒</span>
+                        <input type="password" id="password" name="password" placeholder="请输入密码(至少8位,含大小写和数字)">
+                        <span class="toggle-password" id="togglePassword">👁️</span>
+                    </div>
+                    <div class="password-strength" id="passwordStrength"></div>
+                    <span class="error-message" id="passwordError"></span>
+                </div>
+
+                <!-- 确认密码 -->
+                <div class="form-group">
+                    <label for="confirmPassword">确认密码</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">🔐</span>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="请再次输入密码">
+                        <span class="toggle-password" id="toggleConfirmPassword">👁️</span>
+                    </div>
+                    <span class="error-message" id="confirmPasswordError"></span>
+                </div>
+
+                <!-- 手机号(可选) -->
+                <div class="form-group">
+                    <label for="phone">手机号 <span class="optional">(可选)</span></label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">📱</span>
+                        <input type="tel" id="phone" name="phone" placeholder="请输入手机号">
+                    </div>
+                    <span class="error-message" id="phoneError"></span>
+                </div>
+
+                <!-- 同意协议 -->
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="agreeTerms" name="agreeTerms">
+                        <span class="checkbox-custom"></span>
+                        <span class="checkbox-text">
+                            我已阅读并同意 <a href="#" class="link">《用户协议》</a> 和 <a href="#" class="link">《隐私政策》</a>
+                        </span>
+                    </label>
+                    <span class="error-message" id="agreeTermsError"></span>
+                </div>
+
+                <!-- 提交按钮 -->
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="btn-text">立即注册</span>
+                </button>
+
+                <!-- 分隔线 -->
+                <div class="divider">
+                    <span>或使用其他方式注册</span>
+                </div>
+
+                <!-- 第三方登录 -->
+                <div class="social-login">
+                    <button type="button" class="social-btn" title="微信">💬</button>
+                    <button type="button" class="social-btn" title="QQ">🐧</button>
+                    <button type="button" class="social-btn" title="GitHub">🐙</button>
+                    <button type="button" class="social-btn" title="Google">🌐</button>
+                </div>
+
+                <!-- 已有账号 -->
+                <p class="login-link">
+                    已有账号?<a href="#" class="link">立即登录</a>
+                </p>
+            </form>
+        </div>
+
+        <!-- 成功提示弹窗 -->
+        <div class="success-modal" id="successModal">
+            <div class="modal-content">
+                <div class="success-icon">✅</div>
+                <h2>注册成功!</h2>
+                <p>欢迎加入我们,<span id="welcomeUsername"></span></p>
+                <button class="modal-btn" id="closeModal">好的,开始使用</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
